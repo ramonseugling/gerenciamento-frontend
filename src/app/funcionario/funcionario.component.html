@@ -1,0 +1,32 @@
+<form class="form" (submit)="add(funcionarioLogin.value, funcionarioNome.value, 
+                                funcionarioCpf.value, funcionarioEmail.value, funcionarioEndereco.value, funcionarioSenha.value)">
+    <div class="form-group">
+        <input #funcionarioLogin type="text" class="form-control" placeholder="Login">
+        <input #funcionarioNome type="text" class="form-control" placeholder="Nome">
+        <input #funcionarioCpf type="integer" class="form-control" placeholder="CPF">
+        <input #funcionarioEmail type="text" class="form-control" placeholder="E-mail">
+        <input #funcionarioEndereco type="text" class="form-control" placeholder="Endereço">
+        <input #funcionarioSenha type="text" class="form-control" placeholder="Senha">
+    </div>
+    <input type="submit" value="Adicionar" class="btn btn-sucess btn-lg btn-block">
+</form>
+
+<table class="table">
+    <tr *ngFor="let funcionario of funcionario">
+        <td class="text-left">
+            <a (click)="edit(funcionario)">
+                <span *ngIf="funcionario!==editFuncionario" >{{funcionario.login}}</span>
+                <input *ngIf="task===editFuncionario" [(ngModel)]="funcionario.login" (blur)="update()" (keyup.enter)="update()">
+            </a>
+        </td>
+        <td class="text-right">
+            <button class="btn btn-danger" (click)="delete(funcionario)">
+                Deletar
+            </button>
+        </td>
+    </tr>
+</table>
+
+<div class="card card-body bg-light text-center">
+    <span class="small">Clique no item para editar</span>
+</div>
