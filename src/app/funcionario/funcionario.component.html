@@ -16,7 +16,7 @@
         <td class="text-left">
             <a (click)="edit(funcionario)">
                 <span *ngIf="funcionario!==editFuncionario" >{{funcionario.login}}</span>
-                <input *ngIf="task===editFuncionario" [(ngModel)]="funcionario.login" (blur)="update()" (keyup.enter)="update()">
+                <!-- <input *ngIf="task===editFuncionario" [(ngModel)]="funcionario.login" (blur)="update()" (keyup.enter)="update()"> -->
             </a>
         </td>
         <td class="text-right">
@@ -26,7 +26,3 @@
         </td>
     </tr>
 </table>
-
-<div class="card card-body bg-light text-center">
-    <span class="small">Clique no item para editar</span>
-</div>

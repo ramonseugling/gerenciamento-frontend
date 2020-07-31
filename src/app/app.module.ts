@@ -10,17 +10,28 @@ import { AppComponent } from './app.component';
 import { FuncionarioComponent } from './funcionario/funcionario.component';
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
+import { HomeComponent } from './home/home.component';
+
+import { Route, RouterModule } from '@angular/router';
+const routes: Route[] = [
+  {path:'home', component: HomeComponent},
+  {path:'funcionario', component: FuncionarioComponent},
+  {path: 'funcionario/:id', component: FuncionarioComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent, FuncionarioComponent
+    AppComponent, 
+    FuncionarioComponent, 
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     //HttpModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [MessageService, HttpErrorHandler],
   bootstrap: [AppComponent]

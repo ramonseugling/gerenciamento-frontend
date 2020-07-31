@@ -1,0 +1,24 @@
+<br/>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Login</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let funcionario of funcionarios">
+        <td>{{funcionario.id}}</td>
+        <th>{{funcionario.login}}</th>
+        <td>{{funcionario.nome}}</td>
+        <td>{{funcionario.cpf}}</td>
+        <td>{{funcionario.email}}</td>
+        <td>{{funcionario.endereco}}</td>
+        <td><a class="btn btn-primary btn sn" routerLink="/funcionario/{{funcionario.id}}">Editar</a></td>
+      </tr>
+    </tbody>
+  </table>
