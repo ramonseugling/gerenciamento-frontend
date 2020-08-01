@@ -10,19 +10,3 @@
     </div>
     <input type="submit" value="Adicionar" class="btn btn-sucess btn-lg btn-block">
 </form>
-
-<table class="table">
-    <tr *ngFor="let funcionario of funcionario">
-        <td class="text-left">
-            <a (click)="edit(funcionario)">
-                <span *ngIf="funcionario!==editFuncionario" >{{funcionario.login}}</span>
-                <!-- <input *ngIf="task===editFuncionario" [(ngModel)]="funcionario.login" (blur)="update()" (keyup.enter)="update()"> -->
-            </a>
-        </td>
-        <td class="text-right">
-            <button class="btn btn-danger" (click)="delete(funcionario)">
-                Deletar
-            </button>
-        </td>
-    </tr>
-</table>

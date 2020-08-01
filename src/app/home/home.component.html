@@ -12,13 +12,39 @@
     </thead>
     <tbody>
       <tr *ngFor="let funcionario of funcionarios">
-        <td>{{funcionario.id}}</td>
-        <th>{{funcionario.login}}</th>
+        <th>{{funcionario.id}}</th>
+        <td>{{funcionario.login}}</td>
         <td>{{funcionario.nome}}</td>
         <td>{{funcionario.cpf}}</td>
         <td>{{funcionario.email}}</td>
         <td>{{funcionario.endereco}}</td>
-        <td><a class="btn btn-primary btn sn" routerLink="/funcionario/{{funcionario.id}}">Editar</a></td>
+        <td>
+          <a class="btn btn-primary btn sn" routerLink="/funcionario/{{funcionario.id}}">Editar</a>
+          <a class="btn btn-danger" (click)="deleteFuncionario(funcionario)">Apagar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">Id</th> -->
+        <th scope="col">Nome</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empresa of empresas">
+        <!-- <td>{{empresa.id}}</td> -->
+        <td>{{empresa.nome}}</td>
+        <td>{{empresa.cnpj}}</td>
+        <td>{{empresa.endereco}}</td>
+        <td>
+          <!-- <a class="btn btn-primary btn sn" routerLink="/empresa/{{empresa.id}}">Editar</a> -->
+          <a class="btn btn-danger" (click)="deleteEmpresa(empresa)">Apagar</a>
+        </td>
       </tr>
     </tbody>
   </table>

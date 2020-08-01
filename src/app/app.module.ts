@@ -13,17 +13,20 @@ import { MessageService } from './message.service';
 import { HomeComponent } from './home/home.component';
 
 import { Route, RouterModule } from '@angular/router';
+import { EmpresaComponent } from './empresa/empresa.component';
 const routes: Route[] = [
   {path:'home', component: HomeComponent},
   {path:'funcionario', component: FuncionarioComponent},
-  {path: 'funcionario/:id', component: FuncionarioComponent}
+  {path: 'funcionario/:id', component: FuncionarioComponent},
+  {path: 'empresa', component: EmpresaComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent, 
     FuncionarioComponent, 
-    HomeComponent
+    HomeComponent, 
+    EmpresaComponent
   ],
   imports: [
     BrowserModule,
