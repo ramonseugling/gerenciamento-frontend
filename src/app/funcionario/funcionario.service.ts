@@ -16,7 +16,7 @@ export class FuncionarioService {
         this.handleError = httpErrorHandler.createHandleError('FuncionarioService')
     }
 
-    getFuncionario(): Observable<Funcionario[]> {
+    getFuncionarios(): Observable<Funcionario[]> {
         return this.http
             .get<Funcionario[]>('api/funcionario')
             .pipe(catchError(this.handleError('getFuncionario', [])))
@@ -37,7 +37,7 @@ export class FuncionarioService {
 
     updateFuncionario(funcionario: Funcionario): Observable<Funcionario>{
         return this.http
-            .put<Funcionario>('api/funcionario/${funcionario.id}', funcionario)
+            .put<Funcionario>(`api/funcionario/${funcionario.id}`, funcionario)
             .pipe(catchError(this.handleError('updateFuncionario', funcionario)))
     }
 }

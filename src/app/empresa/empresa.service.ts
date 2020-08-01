@@ -34,6 +34,10 @@ export class EmpresaService {
         .delete(url)
         .pipe(catchError(this.handleError('deleteEmpresa')))
 }
-
+  updateEmpresa(empresa: Empresa): Observable<Empresa>{
+    return this.http
+        .put<Empresa>(`api/empresa/${empresa.id}`, empresa)
+        .pipe(catchError(this.handleError('updateEmpresa', empresa)))
+  }
 
 }

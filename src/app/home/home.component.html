@@ -1,6 +1,6 @@
 <br/>
 <table class="table">
-    <thead>
+    <thead class="lg">
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Login</th>
@@ -42,7 +42,7 @@
         <td>{{empresa.cnpj}}</td>
         <td>{{empresa.endereco}}</td>
         <td>
-          <!-- <a class="btn btn-primary btn sn" routerLink="/empresa/{{empresa.id}}">Editar</a> -->
+          <a class="btn btn-primary btn sn" routerLink="/empresa/{{empresa.id}}">Editar</a>
           <a class="btn btn-danger" (click)="deleteEmpresa(empresa)">Apagar</a>
         </td>
       </tr>

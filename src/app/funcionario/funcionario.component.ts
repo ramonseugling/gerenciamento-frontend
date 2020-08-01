@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Funcionario } from './funcionario'
 import { FuncionarioService } from './funcionario.service'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
+
 
 @Component({
     selector: 'app-funcionario',
@@ -22,13 +23,14 @@ export class FuncionarioComponent implements OnInit {
     id: any;
     editing: boolean =  false;
 
-    constructor(private funcionarioService: FuncionarioService, private activatedRoute: ActivatedRoute){
+    constructor(private funcionarioService: FuncionarioService, private activatedRoute: ActivatedRoute, private router: Router){
     this.id = this.activatedRoute.snapshot.params['id'];
+    
         if(this.id){
             this.editing = true;
-            this.funcionarioService.getFuncionario().subscribe((data: Funcionario[]) => {
-                this.funcionarios == data;
-                // this.funcionario = this.funcionarios.find((m) => { return m.id == this.id });
+            this.funcionarioService.getFuncionarios().subscribe((data: Funcionario[]) => {
+                this.funcionarios = data;
+                this.funcionario = this.funcionarios.find(funcionario => { return funcionario.id == this.id });
                 console.log(data);
             });
         }else{
@@ -37,11 +39,11 @@ export class FuncionarioComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.getFuncionario()
+        this.getFuncionarios()
     }
 
-    getFuncionario():void{
-        this.funcionarioService.getFuncionario().subscribe(funcionarios => (this.funcionarios = funcionarios))
+    getFuncionarios():void{
+        this.funcionarioService.getFuncionarios().subscribe(funcionarios => (this.funcionarios = funcionarios))
     }
 
     add(login: string, nome: string, cpf: number, email: string, endereco: string, senha: string): void {
@@ -53,21 +55,12 @@ export class FuncionarioComponent implements OnInit {
 
         const newFuncionario: Funcionario = {login, nome, cpf, email, endereco, senha}
         this.funcionarioService.addFuncionario(newFuncionario).subscribe(funcionarios => this.funcionarios.push(funcionarios))
+        this.router.navigate(['/home']);
     }
-
-    edit(funcionario){
-        // this.editFuncionario = funcionario
+    
+    update(login: string, nome: string, cpf: number, email: string, endereco: string, senha: string) {       
+        const updatedFuncionario: Funcionario = {id:this.id, login, nome, cpf, email, endereco, senha}
+        this.funcionarioService.updateFuncionario(updatedFuncionario).subscribe()
+        this.router.navigate(['/home']);
     }
-
-    // update() {
-    //     if(this.editFuncionario){
-    //         this.funcionarioService.updateFuncionario(this.editFuncionario).subscribe(funcionario => {
-    //             const ix = funcionario ? this.funcionario.findIndex(h => h.id === funcionario.id) : -1
-    //             if(ix > -1) {
-    //                 this.funcionario[ix] = funcionario
-    //             }
-    //         })
-    //         this.editFuncionario = undefined
-    //     }
-    // }
 }

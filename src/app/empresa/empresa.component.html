@@ -1,4 +1,12 @@
-<form class="form" (submit)="add(empresaNome.value, empresaCnpj.value, empresaEndereco.value)">
+<form class="form" *ngIf ="editing" (submit)="update(empresaNome.value, empresaCnpj.value, empresaEndereco.value)">
+    <div class="form-group">
+        <input #empresaNome type="text" class="form-control" value={{empresa.nome}} placeholder="Nome">
+        <input #empresaCnpj type="integer" class="form-control" value={{empresa.cnpj}} placeholder="CNPJ">
+        <input #empresaEndereco type="text" class="form-control" value={{empresa.endereco}} placeholder="Endereço">
+    </div>
+    <input type="submit" value="Adicionar" class="btn btn-sucess btn-lg btn-block">
+</form>
+<form class="form" *ngIf ="!editing" (submit)="add(empresaNome.value, empresaCnpj.value, empresaEndereco.value)">
     <div class="form-group">
         <input #empresaNome type="text" class="form-control" placeholder="Nome">
         <input #empresaCnpj type="integer" class="form-control" placeholder="CNPJ">

@@ -18,7 +18,8 @@ const routes: Route[] = [
   {path:'home', component: HomeComponent},
   {path:'funcionario', component: FuncionarioComponent},
   {path: 'funcionario/:id', component: FuncionarioComponent},
-  {path: 'empresa', component: EmpresaComponent}
+  {path: 'empresa', component: EmpresaComponent},
+  {path: 'empresa/:id', component: EmpresaComponent}
 ];
 
 @NgModule({

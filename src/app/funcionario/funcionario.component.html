@@ -1,12 +1,25 @@
-<form class="form" (submit)="add(funcionarioLogin.value, funcionarioNome.value, 
+<form class="form" *ngIf ="editing" (submit)="update(funcionarioLogin.value, funcionarioNome.value, 
                                 funcionarioCpf.value, funcionarioEmail.value, funcionarioEndereco.value, funcionarioSenha.value)">
     <div class="form-group">
-        <input #funcionarioLogin type="text" class="form-control" placeholder="Login">
-        <input #funcionarioNome type="text" class="form-control" placeholder="Nome">
-        <input #funcionarioCpf type="integer" class="form-control" placeholder="CPF">
-        <input #funcionarioEmail type="text" class="form-control" placeholder="E-mail">
-        <input #funcionarioEndereco type="text" class="form-control" placeholder="Endereço">
+        <input #funcionarioLogin type="text" value={{funcionario.login}} class="form-control" placeholder="Login">
+        <input #funcionarioNome type="text" value={{funcionario.nome}} class="form-control" placeholder="Nome">
+        <input #funcionarioCpf type="number" value={{funcionario.cpf}} class="form-control" placeholder="CPF">
+        <input #funcionarioEmail type="text" value={{funcionario.email}} class="form-control" placeholder="E-mail">
+        <input #funcionarioEndereco type="text" value={{funcionario.endereco}} class="form-control" placeholder="Endereço">
+        <input #funcionarioSenha type="text" value={{funcionario.senha}} class="form-control" placeholder="Senha">
+    </div>
+    <input type="submit" value="Editar" class="btn btn-sucess btn-lg btn-block">
+</form>
+<form class="form" *ngIf ="!editing" (submit)="add(funcionarioLogin.value, funcionarioNome.value, 
+                                funcionarioCpf.value, funcionarioEmail.value, funcionarioEndereco.value, funcionarioSenha.value)">
+    <div class="form-group" >
+        <input #funcionarioLogin type="text" class="form-control" required placeholder="Login">
+        <input #funcionarioNome type="text" class="form-control" required placeholder="Nome">
+        <input #funcionarioCpf type="number" class="form-control" required placeholder="CPF">
+        <input #funcionarioEmail type="text" class="form-control" required placeholder="E-mail">
+        <input #funcionarioEndereco type="text" class="form-control" required placeholder="Endereço">
         <input #funcionarioSenha type="text" class="form-control" placeholder="Senha">
     </div>
     <input type="submit" value="Adicionar" class="btn btn-sucess btn-lg btn-block">
 </form>
+

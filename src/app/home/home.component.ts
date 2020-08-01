@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getFuncionario();
+    this.getFuncionarios();
     this.getTodasEmpresas();
   }
 
@@ -37,17 +37,17 @@ export class HomeComponent implements OnInit {
     this.empresaService.getTodasEmpresas().subscribe(empresas => (this.empresas = empresas))
   }
 
-  getFuncionario():void{
-    this.funcionarioService.getFuncionario().subscribe(funcionarios => (this.funcionarios = funcionarios))
+  getFuncionarios():void{
+    this.funcionarioService.getFuncionarios().subscribe(funcionarios => (this.funcionarios = funcionarios))
   }
 
   deleteEmpresa(empresa: Empresa): void {
-    this.empresas = this.empresas.filter(empresa => empresa !== empresa)
+    this.empresas = this.empresas.filter(findEmpresa => findEmpresa !== empresa)
     this.empresaService.deleteEmpresa(empresa.id).subscribe();
   }
 
   deleteFuncionario(funcionario: Funcionario): void {
-    this.funcionarios = this.funcionarios.filter(funcionario => funcionario !== funcionario)
+    this.funcionarios = this.funcionarios.filter(findFuncionario => findFuncionario !== funcionario)
     this.funcionarioService.deleteFuncionario(funcionario.id).subscribe();
   }
 
