@@ -1,3 +1,4 @@
+<!-- FORM PARA EDITAR UMA EMPRESA, CASO A VARIÁVEL EDITING SEJA TRUE -->
 <form class="form" *ngIf ="editing" (submit)="update(empresaNome.value, empresaCnpj.value, empresaEndereco.value)">
     <div class="form-group">
         <input #empresaNome type="text" class="form-control" value={{empresa.nome}} placeholder="Nome">
@@ -6,10 +7,11 @@
     </div>
     <input type="submit" value="Adicionar" class="btn btn-sucess btn-lg btn-block">
 </form>
+<!-- FORM PARA ADICIONAR UMA EMPRESA, CASO A VARIÁVEL EDITING SEJA FALSE -->
 <form class="form" *ngIf ="!editing" (submit)="add(empresaNome.value, empresaCnpj.value, empresaEndereco.value)">
     <div class="form-group">
-        <input #empresaNome type="text" class="form-control" placeholder="Nome">
-        <input #empresaCnpj type="integer" class="form-control" placeholder="CNPJ">
+        <input #empresaNome id ="nome" type="text" class="form-control" placeholder="Nome">
+        <input #empresaCnpj type="number" class="form-control" placeholder="CNPJ">
         <input #empresaEndereco type="text" class="form-control" placeholder="Endereço">
     </div>
     <input type="submit" value="Adicionar" class="btn btn-sucess btn-lg btn-block">

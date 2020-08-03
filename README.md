@@ -1,27 +1,30 @@
-# Frontend
+# Frontend Angular de Gerenciamento de funcionários e empresas no Teste da BRy Tecnologia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+Esse projeto foi desenvolvido utilizando o framework [Angular CLI](https://github.com/angular/angular-cli) versão 10.0.4. 
 
-## Development server
+Ele serve para adicionar, listar, editar e excluir funcionários e empresas, integrado com o backend em Laravel.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Tech
 
-## Code scaffolding
+O exemplo utiliza das tecnologias abaixo:
+*[Angular] - Plattform for building mobile and desktop web applications
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Uso 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para a execução da aplicação de exeplo, importe o projeto em sua IDE de preferência e instale as dependências. Utilizamos Angular versão 10.0.4 para o desenvolvimento e o Npm versão 6.14 para instalação das dependências e execução da aplicação.
 
-## Running unit tests
+# Comandos:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Instalar as dependências utilizando o comando abaixo:
 
-## Running end-to-end tests
+- npm install
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Executar programa:
 
-## Further help
+- npm start
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Acesse: http://localhost/4200
+
+
+

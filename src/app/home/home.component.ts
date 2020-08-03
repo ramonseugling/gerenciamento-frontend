@@ -32,20 +32,26 @@ export class HomeComponent implements OnInit {
     this.getFuncionarios();
     this.getTodasEmpresas();
   }
-
+  
+  //Método de chamar o empresaService para buscar as empresas cadastradas
   getTodasEmpresas():void{
     this.empresaService.getTodasEmpresas().subscribe(empresas => (this.empresas = empresas))
   }
-
+  
+  //Método de chamar o funcionarioService para buscar os funcionários cadastrados
   getFuncionarios():void{
     this.funcionarioService.getFuncionarios().subscribe(funcionarios => (this.funcionarios = funcionarios))
   }
 
+  //Método de chamar o empresaService para apagar a empresa
+  //Recebe como parâmetro a empresa a ser apagada
   deleteEmpresa(empresa: Empresa): void {
     this.empresas = this.empresas.filter(findEmpresa => findEmpresa !== empresa)
     this.empresaService.deleteEmpresa(empresa.id).subscribe();
   }
 
+  //Método de chamar o funcionarioService para apagar o funcionário
+  //Recebe como parâmetro o funcionário a ser apagado
   deleteFuncionario(funcionario: Funcionario): void {
     this.funcionarios = this.funcionarios.filter(findFuncionario => findFuncionario !== funcionario)
     this.funcionarioService.deleteFuncionario(funcionario.id).subscribe();

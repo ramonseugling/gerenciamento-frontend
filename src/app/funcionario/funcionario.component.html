@@ -1,3 +1,4 @@
+<!-- FORM PARA EDITAR UM FUNCIONÁRIO, CASO A VARIÁVEL EDITING SEJA TRUE -->
 <form class="form" *ngIf ="editing" (submit)="update(funcionarioLogin.value, funcionarioNome.value, 
                                 funcionarioCpf.value, funcionarioEmail.value, funcionarioEndereco.value, funcionarioSenha.value)">
     <div class="form-group">
@@ -10,6 +11,7 @@
     </div>
     <input type="submit" value="Editar" class="btn btn-sucess btn-lg btn-block">
 </form>
+<!-- FORM PARA ADICIONAR UM FUNCIONÁRIO, CASO A VARIÁVEL EDITING SEJA FALSE -->
 <form class="form" *ngIf ="!editing" (submit)="add(funcionarioLogin.value, funcionarioNome.value, 
                                 funcionarioCpf.value, funcionarioEmail.value, funcionarioEndereco.value, funcionarioSenha.value)">
     <div class="form-group" >

@@ -1,8 +1,9 @@
 <br/>
+<h4>Lista de funcionários:</h4>
+<!-- TABELA DE FUNCIONÁRIOS CADASTRADOS NO BANCO DE DADOS DO SISTEMA -->
 <table class="table">
     <thead class="lg">
       <tr>
-        <th scope="col">Id</th>
         <th scope="col">Login</th>
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
@@ -12,7 +13,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let funcionario of funcionarios">
-        <th>{{funcionario.id}}</th>
         <td>{{funcionario.login}}</td>
         <td>{{funcionario.nome}}</td>
         <td>{{funcionario.cpf}}</td>
@@ -26,10 +26,11 @@
     </tbody>
   </table>
   <br/>
+  <h4>Lista de empresas:</h4>
+  <!-- TABELA DE EMPRESAS CADASTRADOS NO BANCO DE DADOS DO SISTEMA -->
   <table class="table">
     <thead>
       <tr>
-        <!-- <th scope="col">Id</th> -->
         <th scope="col">Nome</th>
         <th scope="col">CNPJ</th>
         <th scope="col">Endereço</th>
@@ -37,7 +38,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let empresa of empresas">
-        <!-- <td>{{empresa.id}}</td> -->
         <td>{{empresa.nome}}</td>
         <td>{{empresa.cnpj}}</td>
         <td>{{empresa.endereco}}</td>
