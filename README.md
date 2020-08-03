@@ -7,7 +7,7 @@ Ele serve para adicionar, listar, editar e excluir funcionários e empresas, int
 ### Tech
 
 O exemplo utiliza das tecnologias abaixo:
-*[Angular] - Plattform for building mobile and desktop web applications
+* [Angular] - Plattform for building mobile and desktop web applications
 
 
 ### Uso 
@@ -26,5 +26,6 @@ Executar programa:
 
 Acesse: http://localhost/4200
 
+[Angular]: https://angular.io/
 
 
